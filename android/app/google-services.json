@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "737973340039",
+    "project_id": "relaxiz",
+    "storage_bucket": "relaxiz.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737973340039:android:1250127f3c4699e14fb522",
+        "android_client_info": {
+          "package_name": "com.dhruvapps.relaxiz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHG6cZ_xMA6_ap6g22HqCXXO32JWDByYk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
