@@ -2,8 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:relaxiz/pages/QuotePage.dart';
-import 'package:relaxiz/providers/QuoteProvider.dart';
+import 'package:relaxiz/pages/pg_list_page.dart';
+import 'package:relaxiz/providers/pg_provider.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +22,7 @@ void main() async{
   }
   runApp(
     MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => QuoteProvider())],
+      providers: [ChangeNotifierProvider(create: (_) => PGProvider())],
       child: MyApp(),
     ),
   );
@@ -34,11 +34,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'RelaxiZ',
+      title: 'PG Helper',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: QuotePage(),
+      home: PGListPage(),
     );
   }
 }

@@ -1,14 +1,19 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../model_classes/QuotesModelClass.dart';
+
+import '../model_classes/pg_model_class.dart';
 
 class FirebaseService {
-  final CollectionReference _quotesCollection =
-  FirebaseFirestore.instance.collection('quotes');
+  final CollectionReference pgCollection =
+  FirebaseFirestore.instance.collection('pgs');
 
-  Future<List<Quote>> fetchQuotes() async {
-    QuerySnapshot snapshot = await _quotesCollection.get();
+  Future<List<PG>> fetchPGs() async {
+    QuerySnapshot snapshot = await pgCollection.get();
     return snapshot.docs
-        .map((doc) => Quote.fromMap(doc.data() as Map<String, dynamic>, doc.id))
+        .map((doc) => PG.fromMap(doc.data() as Map<String, dynamic>, doc.id))
         .toList();
+  }
+
+  Future<void> addPG(Map<String, dynamic> pgData) async {
+    await pgCollection.add(pgData);
   }
 }
